@@ -44,6 +44,13 @@ class InstagramCrew:
     def copywriter(self) -> Agent:
         return Agent(config=self.agents_config["copywriter"], verbose=True)
 
+    @agent
+    def translator(self) -> Agent:
+        return Agent(
+			config=self.agents_config['translator'],
+			verbose=True
+		)
+
     @task
     def market_research(self) -> Task:
         return Task(
@@ -52,6 +59,14 @@ class InstagramCrew:
             output_file="market_research.md",
         )
 
+    @task
+    def translate_task(self) -> Task:
+        return Task(
+			config=self.tasks_config['translate_task'],
+			agent=self.translator(),
+			output_file='market_research_ptbr.md'
+		)
+    
     @task
     def content_strategy_task(self) -> Task:
         return Task(
@@ -68,6 +83,15 @@ class InstagramCrew:
         )
 
     @task
+    def translate_task(self) -> Task:
+        return Task(
+			config=self.tasks_config['translate_task'],
+			agent=self.translator(),
+			output_file='visual-content_ptbr.md'
+		)
+     
+
+    @task
     def copywriting_task(self) -> Task:
         return Task(
             config=self.tasks_config["copywriting"],
@@ -82,6 +106,16 @@ class InstagramCrew:
             output_file="final-content-strategy.md",
         )
 
+    @task
+    def translate_task(self) -> Task:
+        return Task(
+			config=self.tasks_config['translate_task'],
+			agent=self.translator(),
+			output_file='final-content-strategy_ptbr.md'
+		)
+
+    
+      
     @crew
     def crew(self) -> Crew:
         """Creates the Instagram crew"""

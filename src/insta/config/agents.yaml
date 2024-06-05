@@ -32,7 +32,7 @@ copywriter:
 
 translator:
   role: >
-    {topic} Translator
+    Translator
   goal: >
     Tranlate the information from Brazilian Portuguese
   backstory: >
