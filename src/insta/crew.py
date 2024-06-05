@@ -60,11 +60,11 @@ class InstagramCrew:
         )
 
     @task
-    def translate_task(self) -> Task:
+    def translate_market_research(self) -> Task:
         return Task(
 			config=self.tasks_config['translate_task'],
 			agent=self.translator(),
-			output_file='market_research_ptbr.md'
+			output_file='market_research_ptbr.md',
 		)
     
     @task
@@ -83,11 +83,11 @@ class InstagramCrew:
         )
 
     @task
-    def translate_task(self) -> Task:
+    def translate_visual_content(self) -> Task:
         return Task(
 			config=self.tasks_config['translate_task'],
 			agent=self.translator(),
-			output_file='visual-content_ptbr.md'
+			output_file='visual-content_ptbr.md',
 		)
      
 
@@ -107,11 +107,11 @@ class InstagramCrew:
         )
 
     @task
-    def translate_task(self) -> Task:
+    def translate_final_content(self) -> Task:
         return Task(
 			config=self.tasks_config['translate_task'],
 			agent=self.translator(),
-			output_file='final-content-strategy_ptbr.md'
+			output_file='final-content-strategy_ptbr.md',
 		)
 
     
